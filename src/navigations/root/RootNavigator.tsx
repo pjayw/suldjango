@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-
 import AuthStackNavigator from "../stack/AuthStackNavigator";
 
 const RootNavigator: React.FC = () => {

@@ -30,8 +30,8 @@ const StyledText = styled(Text)<{
 }>`
   font-family: ${({ fontWeight }) => 
     fontWeight === 'bold' ? 'Hakgyoansim Dunggeunmiso OTF B' : 'Hakgyoansim Dunggeunmiso OTF R'};
-  font-size: ${({ fontSize }) => ( fontSize ? `${fontSize}px` : '14px')}
-  color: ${({ color }) => ( color ? color : colors.BLACK)}
-`
+  font-size: ${({ fontSize }) => ( fontSize ? `${fontSize}px` : '14px')};
+  color: ${({ color }) => ( color ? color : colors.BLACK)};
+`;
 
 export default CustomFont

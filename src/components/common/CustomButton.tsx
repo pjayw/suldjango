@@ -67,7 +67,7 @@ const StyledPressable = styled(Pressable)<{ variant: string, inValid: boolean }>
 
   &:active {
     background-color: ${({ variant }) =>
-      variant === 'filled' ? 'darkblue' : 'lightgrey'};
+      variant === 'filled' ? 'purple' : 'lightgrey'};
   }
 `;
 

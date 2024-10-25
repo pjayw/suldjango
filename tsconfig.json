@@ -7,7 +7,7 @@
     "jsx": "react-native",
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
       "test/*": ["test/*"],

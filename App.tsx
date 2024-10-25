@@ -1,6 +1,7 @@
-import React, { Provider } from "react";
+import React from "react";
 import { StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components";
+import RootNavigator from "./src/navigations/root/RootNavigator"
 
 const theme = {
   colors: {
@@ -13,7 +14,8 @@ const theme = {
 function App(): React.JSX.Element {
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar />
+      <StatusBar backgroundColor={theme.colors.background} barStyle="dark-content"/>
+      <RootNavigator />
     </ThemeProvider>
   )
 }

@@ -49,9 +49,9 @@ const SplashScreen = () => {
       <CustomFont fontSize={25} color="gray">
         와인과 칵테일을 쉽게!
       </CustomFont>
-      <Animated.Image
+      <LogoImageBlock
         source={mainLogo} // 로고 이미지 경로
-        style={[LogoImageBlock, { transform: [{ translateY: logoInterpolate }] }]}
+        style={{ transform: [{ translateY: logoInterpolate }] }}
       />
     </View>
  </SplashScreenBlock>
@@ -65,10 +65,11 @@ const SplashScreenBlock = styled.View`
   `;
 
 const LogoImageBlock = styled(Animated.Image)`
-marginTop: 50,
-width: 150,
-height: 150,
-resizeMode: 'contain',
+marginTop: 50px;
+marginLeft: 50px;
+width: 150px;
+height: 150px;
+resizeMode: 'contain';
 `;
 
 export default SplashScreen;
