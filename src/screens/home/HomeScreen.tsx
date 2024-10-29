@@ -1,14 +1,15 @@
-import styled from 'styled-components/native';
-import { Text } from 'react-native';
+import tw from 'twrnc';
+import { SafeAreaView, View } from 'react-native';
+import HomeBanner from '@/components/Home/HomeBanner';
+import MyRefBanner from '@/components/Home/MyRefBanner';
 
 const HomeScreen = () => {
  return (
- <HomeScreenBlock>
-  <Text>메인 홈</Text>
- </HomeScreenBlock>
+ <SafeAreaView style={tw``}>
+  <HomeBanner />
+  <MyRefBanner />
+ </SafeAreaView>
  );
 };
-
-const HomeScreenBlock = styled.View``;
 
 export default HomeScreen;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
-// import { NavigatorScreenParams, RouteProp } from '@react-navigation/native';
+import { RouteProp } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { mainNavigations, colors } from '@/constants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import HomeScreen from '@/screens/home/HomeScreen' // 각 화면은 예시로 사용 중
+import HomeScreen from '@/screens/home/HomeScreen' 
 import RecommendScreen from '@/screens/recommend/RecoHomeScreen';
 import RecipeScreen from '@/screens/cocktails/CocktailSearch';
 import MyRefScreen from '@/screens/refrigerator/MyRefScreen';
@@ -18,44 +18,44 @@ type MainTabParamList = {
   [mainNavigations.MYPAGE] : undefined;  
 }
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<MainTabParamList>();
 
-function TabBarIcons(routeName: keyof MainTabParamList, focused: boolean) {
+function TabBarIcons(route: RouteProp<MainTabParamList>, focused: boolean) {
   let iconName = '';
 
-  switch (routeName) {
+  switch (route.name) {
     case mainNavigations.HOME: {
       iconName= focused ? 'home' : 'home-outline';
       break
     }
     case mainNavigations.RECOMMEND: {
-      iconName= focused ? 'thumb-up' : 'thumb-up-outline';
+      iconName= focused ? 'thumbs-up' : 'thumbs-up-outline';
       break
     }
     case mainNavigations.MYSTORAGE: {
-      iconName = focused ? 'bottle-wine' : 'glass-wine';
+      iconName = focused ? 'pint' : 'pint-outline';
       break
     }
     case mainNavigations.RECIPE: {
-      iconName = focused ? 'glass-cocktail' : 'glass-cocktail-off';
+      iconName = focused ? 'cafe' : 'cafe-outline';
       break
     }
     case mainNavigations.MYPAGE: {
-      iconName = focused ? 'account' : 'account-outline';
+      iconName = focused ? 'person' : 'person-outline';
       break
     }
   }
 
   return (
-    <Ionicons name={iconName} color={focused ? colors.BLACK : colors.GRAY_300} size={30} />
-  )
+    <Ionicons name={iconName} color={focused ? colors.PURPLE.BASE : colors.GRAY_300} size={35} />
+  );
 }
 
 const MainTabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarActiveTintColor: `${colors.BLACK}`,
+        tabBarActiveTintColor: `${colors.PURPLE.BASE}`,
         tabBarInactiveTintColor: `${colors.GRAY_300}`,
         headerStyle: {
           backgroundColor: colors.WHITE,
@@ -74,7 +74,7 @@ const MainTabNavigator = () => {
           return <TouchableOpacity {...props} />;
         },
         headerShown: false,
-        tabBarIcon: ({ focused }) => TabBarIcons(route.name as keyof MainTabParamList, focused),
+        tabBarIcon: ({ focused }) => TabBarIcons(route, focused),
       })}>
         <Tab.Screen name={mainNavigations.HOME} component={HomeScreen} options={{ title: '홈' }} />
       <Tab.Screen name={mainNavigations.RECOMMEND} component={RecommendScreen} options={{ title: '추천' }} />

@@ -79,7 +79,7 @@ const ButtonContent = styled(View)<{ size: string }>`
     size === 'large'
       ? 'padding: 16px 32px;'
       : size === 'small'
-      ? 'padding: 8px 16px;'
+      ? 'padding: 4px 18px;'
       : 'padding: 12px 24px;'}
 `;
 
