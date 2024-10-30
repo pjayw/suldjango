@@ -2,13 +2,16 @@ import tw from 'twrnc';
 import { ImageBackground, TouchableOpacity, View } from 'react-native';
 import CustomFont from '../common/CustomFont';
 import pleaseregi from '@/assets/pleaseregi.png'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
+import { StorageStackParamList } from '@/navigations/stack/StorageStackNavigator';
+import { mainNavigations, MyStorageNavigations } from '@/constants';
 
 const MyRefBanner = () => {
-  const navigation = useNavigation()
+  const navigation = useNavigation<NativeStackNavigationProp<StorageStackParamList>>()
 
   const handlePress = () => {
-
+    navigation.navigate(MyStorageNavigations.STORAGE_HOME)
   }
 
  return (

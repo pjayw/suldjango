@@ -9,6 +9,7 @@ import RecommendScreen from '@/screens/recommend/RecoHomeScreen';
 import RecipeScreen from '@/screens/cocktails/CocktailSearch';
 import MyRefScreen from '@/screens/refrigerator/MyRefScreen';
 import MyPageScreen from '@/screens/home/MyPageScreen';
+import StorageStackNavigator from '../stack/StorageStackNavigator';
 
 type MainTabParamList = {
   [mainNavigations.HOME] : undefined;
@@ -80,7 +81,7 @@ const MainTabNavigator = () => {
       <Tab.Screen name={mainNavigations.RECOMMEND} component={RecommendScreen} options={{ title: '추천' }} />
       <Tab.Screen
         name={mainNavigations.MYSTORAGE}
-        component={MyRefScreen}
+        component={StorageStackNavigator}
         options={{ title: '내 술장고' }}
       />
       <Tab.Screen
