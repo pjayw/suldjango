@@ -1,7 +1,6 @@
 import React from 'react';
 import { MyStorageNavigations } from '@/constants';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import MainTabNavigator from '../tab/MainTabNavigator';
 import MyRefScreen from '@/screens/refrigerator/MyRefScreen';
 import AddWineScreen from '@/screens/refrigerator/AddWineScreen';
 import MyRefDetailScreen from '@/screens/refrigerator/MyRefDetailScreen';

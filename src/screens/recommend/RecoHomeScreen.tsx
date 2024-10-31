@@ -1,13 +1,12 @@
-import styled from 'styled-components/native';
-import { Text } from 'react-native';
+import tw from 'twrnc';
+import { View, Text } from 'react-native';
+
 const RecoHomeScreen = () => {
  return (
- <RecoHomeScreenBlock>
-  <Text>추천 메인</Text>
- </RecoHomeScreenBlock>
+   <View style={tw``}>
+     <Text>안녕</Text>
+   </View>
  );
 };
-
-const RecoHomeScreenBlock = styled.View``;
 
 export default RecoHomeScreen;

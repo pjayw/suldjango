@@ -5,11 +5,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { mainNavigations, colors } from '@/constants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from '@/screens/home/HomeScreen' 
-import RecommendScreen from '@/screens/recommend/RecoHomeScreen';
-import RecipeScreen from '@/screens/cocktails/CocktailSearch';
-import MyRefScreen from '@/screens/refrigerator/MyRefScreen';
 import MyPageScreen from '@/screens/home/MyPageScreen';
 import StorageStackNavigator from '../stack/StorageStackNavigator';
+import RecoStackNavigator from '../stack/RecoStackNavigator';
+import RecipeStackNavigator from '../stack/RecipeStackNavigator';
 
 type MainTabParamList = {
   [mainNavigations.HOME] : undefined;
@@ -78,7 +77,7 @@ const MainTabNavigator = () => {
         tabBarIcon: ({ focused }) => TabBarIcons(route, focused),
       })}>
         <Tab.Screen name={mainNavigations.HOME} component={HomeScreen} options={{ title: '홈' }} />
-      <Tab.Screen name={mainNavigations.RECOMMEND} component={RecommendScreen} options={{ title: '추천' }} />
+      <Tab.Screen name={mainNavigations.RECOMMEND} component={RecoStackNavigator} options={{ title: '추천' }} />
       <Tab.Screen
         name={mainNavigations.MYSTORAGE}
         component={StorageStackNavigator}
@@ -86,7 +85,7 @@ const MainTabNavigator = () => {
       />
       <Tab.Screen
         name={mainNavigations.RECIPE}
-        component={RecipeScreen}
+        component={RecipeStackNavigator}
         options={{ title: '레시피' }}
       />
       <Tab.Screen

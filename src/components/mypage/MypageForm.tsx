@@ -1,7 +1,7 @@
 import tw from 'twrnc';
 import { View } from 'react-native';
 
-const MyPageScreen = () => {
+const MypageForm = () => {
  return (
    <View style={tw``}>
      
@@ -9,4 +9,4 @@ const MyPageScreen = () => {
  );
 };
 
-export default MyPageScreen;
+export default MypageForm;
